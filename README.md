@@ -6,7 +6,7 @@ Built for TikTok AI PM OA | [Setup](#-setup)
 
 ---
 
-## 🎯 The Problem
+## The Problem
 
 **95% of TikTok users never post.** They scroll, like, comment — but don't create.
 
@@ -14,7 +14,7 @@ The blocker isn't motivation. People *want* to post. It's **ability** — in the
 
 ---
 
-## 👤 Target Segment
+## Target Segment
 
 Using the **Segmentation Framework** (Fixed + Behavior + Mindset):
 
@@ -28,7 +28,7 @@ Using the **Segmentation Framework** (Fixed + Behavior + Mindset):
 
 ---
 
-## 💡 The Solution
+## The Solution
 
 **Confidence Coach** detects when you freeze (pauses >3 seconds) and generates context-aware prompts to help you continue.
 
@@ -42,7 +42,7 @@ Using the **Segmentation Framework** (Fixed + Behavior + Mindset):
 
 You say: *"So I've been thinking about what makes content go viral on TikTok. I think the biggest thing is..."*
 
-*[4 second pause]*
+*[3 second pause]*
 
 AI Prompt: **"What's one viral TikTok you've seen that proves your point?"**
 
@@ -102,7 +102,7 @@ More users trust Coach
 
 ---
 
-## 🏗️ Technical Architecture
+## Technical Architecture
 
 ```
 ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
@@ -134,7 +134,7 @@ If they don't act on prompts in Practice Mode, they won't act on them in real-ti
 
 ---
 
-## 🔒 Privacy Design
+## Privacy Design
 
 | Principle | Implementation |
 |-----------|----------------|
@@ -145,7 +145,7 @@ If they don't act on prompts in Practice Mode, they won't act on them in real-ti
 
 ---
 
-## 🚀 Setup
+## Setup
 
 ### Prerequisites
 - Python 3.8+
@@ -188,7 +188,7 @@ Open `http://localhost:3000` in Chrome
 ---
 
 
-## 🛣️ Roadmap
+## Roadmap
 
 | Phase | Feature | Status |
 |-------|---------|--------|
@@ -218,7 +218,7 @@ confidence-coach/
 
 ---
 
-## 🔗 TikTok Strategic Alignment
+## TikTok Strategic Alignment
 
 | TikTok Goal | How Confidence Coach Helps |
 |-------------|---------------------------|
@@ -239,7 +239,3 @@ confidence-coach/
 | Camera not working | Use Chrome, check permissions |
 | "No speech detected" | Check ffmpeg installed (`brew install ffmpeg`) |
 | Slow transcription | Use smaller Whisper model (`tiny`) |
-
----
-
-Built for TikTok AI PM Internship OA
