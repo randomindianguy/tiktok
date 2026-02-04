@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confidence Coach - Practice Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎤 Confidence Coach</h1>
+            <p class="subtitle">Practice Mode — Record, analyze, improve</p>
+        </header>
+
+        <main>
+            <!-- Recording Section -->
+            <section class="recorder-section">
+                <div class="video-container">
+                    <video id="preview" muted playsinline></video>
+                    <div id="recording-indicator" class="recording-indicator hidden">
+                        <span class="dot"></span> Recording
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="recordBtn" class="btn btn-record">
+                        <span class="icon">●</span> Start Recording
+                    </button>
+                    <button id="stopBtn" class="btn btn-stop" disabled>
+                        <span class="icon">■</span> Stop
+                    </button>
+                    <button id="analyzeBtn" class="btn btn-analyze" disabled>
+                        <span class="icon">⚡</span> Analyze with AI
+                    </button>
+                </div>
+                
+                <p id="status" class="status"></p>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section hidden">
+                <h2>Analysis Results</h2>
+                
+                <div class="results-grid">
+                    <!-- Video Playback -->
+                    <div class="panel video-panel">
+                        <h3>📹 Your Recording</h3>
+                        <video id="resultVideo" controls playsinline></video>
+                        <div id="videoStats" class="stats"></div>
+                    </div>
+                    
+                    <!-- Transcript -->
+                    <div class="panel transcript-panel">
+                        <h3>📝 Transcript</h3>
+                        <div id="transcript" class="transcript-content"></div>
+                    </div>
+                    
+                    <!-- AI Coaching -->
+                    <div class="panel prompts-panel">
+                        <h3>💡 AI Coaching Prompts</h3>
+                        <div id="prompts" class="prompts-content"></div>
+                    </div>
+                </div>
+                
+                <button id="resetBtn" class="btn btn-reset">
+                    ↺ Record Another
+                </button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by Whisper + Claude | Built for TikTok creators</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

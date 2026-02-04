@@ -2,7 +2,7 @@
 
 **AI-powered coaching for first-time TikTok creators who freeze mid-recording.**
 
-Built for TikTok AI PM OA | [Demo Script](#demo-script) | [Setup](#setup)
+Built for TikTok AI PM OA | [Setup](#-setup)
 
 ---
 
@@ -107,20 +107,23 @@ More users trust Coach
 ```
 ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
 │   Record    │────▶│   Whisper   │────▶│   Pause     │
-│   Audio     │     │   API       │     │   Detection │
+│   Video     │     │   (Local)   │     │   Detection │
 └─────────────┘     └─────────────┘     └─────────────┘
                                                │
                                                ▼
 ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   Display   │◀────│   GPT-4     │◀────│   Context   │
-│   Results   │     │   Prompts   │     │   Extract   │
+│   Display   │◀────│   Claude    │◀────│   Context   │
+│   Results   │     │   API       │     │   Extract   │
 └─────────────┘     └─────────────┘     └─────────────┘
 ```
 
 ### Stack
-- **Frontend:** HTML/CSS/JS (TikTok-inspired dark theme)
-- **Backend:** Python Flask
-- **AI:** OpenAI Whisper (transcription) + GPT-4 (prompts)
+| Component | Technology | Why |
+|-----------|------------|-----|
+| Transcription | Whisper (local) | Free, accurate, word-level timestamps |
+| Prompts | Claude API | Context-aware, conversational tone |
+| Backend | Python Flask | Simple, fast to build |
+| Frontend | Vanilla JS | No build step, easy to demo |
 
 ### Why Practice Mode First?
 Real-time coaching needs streaming audio, sub-second latency, interrupt handling — weeks of engineering.
@@ -135,10 +138,9 @@ If they don't act on prompts in Practice Mode, they won't act on them in real-ti
 
 | Principle | Implementation |
 |-----------|----------------|
-| Minimal data | Only send audio for analysis |
-| Encrypted transit | HTTPS to Whisper API |
-| Immediate deletion | Audio deleted after processing |
-| Nothing stored | No recordings saved |
+| Local transcription | Whisper runs on-device, audio never sent to cloud |
+| Minimal data | Only 15s of text context sent to Claude |
+| Nothing stored | No recordings or transcripts saved |
 | Clear indicator | Visual status when processing |
 
 ---
@@ -147,24 +149,24 @@ If they don't act on prompts in Practice Mode, they won't act on them in real-ti
 
 ### Prerequisites
 - Python 3.8+
-- Node.js (optional, for serving frontend)
-- OpenAI API key
+- [ffmpeg](https://ffmpeg.org/) (`brew install ffmpeg` on Mac)
+- [Anthropic API key](https://console.anthropic.com/settings/keys)
 
 ### Backend Setup
 
 ```bash
 cd backend
 
-# Create virtual environment (optional)
+# Create virtual environment
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
+# Install dependencies (downloads Whisper model ~150MB)
 pip install -r requirements.txt
 
 # Configure API key
 cp .env.example .env
-# Edit .env and add your OpenAI API key
+# Edit .env and add your Anthropic API key
 
 # Run server
 python app.py
@@ -177,18 +179,14 @@ Server runs at `http://localhost:5001`
 ```bash
 cd frontend
 
-# Option 1: Python simple server
+# Serve frontend
 python -m http.server 3000
-
-# Option 2: Node.js
-npx serve -p 3000
-
-# Option 3: Just open index.html in browser
 ```
 
-Open `http://localhost:3000`
+Open `http://localhost:3000` in Chrome
 
 ---
+
 
 ## 🛣️ Roadmap
 
@@ -230,6 +228,17 @@ confidence-coach/
 | Creator retention | Success → confidence → more attempts |
 
 **Team Fit:** Social & Creation — turning passive consumers into active creators.
+
+---
+
+## 🛠️ Troubleshooting
+
+| Issue | Fix |
+|-------|-----|
+| Port 5001 in use | Change port in `app.py` and `app.js` |
+| Camera not working | Use Chrome, check permissions |
+| "No speech detected" | Check ffmpeg installed (`brew install ffmpeg`) |
+| Slow transcription | Use smaller Whisper model (`tiny`) |
 
 ---
 
