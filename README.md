@@ -190,42 +190,6 @@ Open `http://localhost:3000`
 
 ---
 
-## 🎬 Demo Script
-
-### For OA Video Recording
-
-**0:00-0:45 — Problem**
-> "I've tried posting on TikTok. Know what stopped me? I froze. I hit record, started talking, and then... nothing. I deleted it.
-> 
-> I'm not alone. 95% of TikTok users never post. The blocker isn't motivation — people want to post. It's ability. In that freeze moment, they don't know what to say next.
-> 
-> What if TikTok could help at that exact moment?"
-
-**0:45-2:30 — Live Demo**
-> "This is Confidence Coach, Practice Mode. Watch me record..."
-> 
-> *[Record, pause deliberately, analyze, show results]*
-> 
-> "See that? Real Whisper API transcribing. Real GPT-4 generating prompts. Not scripted — every recording gets different prompts based on context."
-
-**2:30-3:15 — Technical Stack**
-> "Simple stack: Whisper for transcription, GPT-4 with 15 seconds of context. Practice Mode validates the core question before investing in real-time engineering."
-
-**3:15-4:00 — Challenges**
-> "Three challenges: Latency (streaming API, 2s target), prompt quality (context + tone), privacy (encrypted, processed, immediately deleted)."
-
-**4:00-4:45 — Vision**
-> "TikTok's mission is democratizing creation. Only the confident 5% post. Confidence Coach makes creation accessible to everyone.
-> 
-> Goal: 2x completion rate for first-time creators.
-> 
-> This is step one. The vision is a 0-to-1 creator suite: niche discovery, recording support, early growth guidance."
-
-**4:45-5:00 — Close**
-> "95% of TikTok users have something to say. They just need help saying it. Confidence Coach removes the psychological barrier between idea and post."
-
----
-
 ## 🛣️ Roadmap
 
 | Phase | Feature | Status |
